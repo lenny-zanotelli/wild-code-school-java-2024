@@ -13,7 +13,8 @@
   },
   "scripts": {
     "build": "rm -rf ./build && tsc",
-    "start": "node build/bankCustomer.js",
+    "start:bankCustomer": "node build/bankCustomer.js",
+    "start:person": "node build/person.js",
     "test": "node --test"
   },
   "keywords": [],
