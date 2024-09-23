@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "@types/node": "^22.5.5"
+  },
+  "name": "typescript-basic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "undici-types": "^6.19.8"
+  },
+  "scripts": {
+    "build": "rm -rf ./build && tsc",
+    "start": "node build/bankCustomer.js",
+    "test": "node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
