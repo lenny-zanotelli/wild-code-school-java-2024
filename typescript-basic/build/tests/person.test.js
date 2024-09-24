@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const assert_1 = __importDefault(require("assert"));
-const person_1 = require("../person");
-const person1 = new person_1.Person("Mary", 35);
-const person2 = new person_1.Person("John", 45);
+const Person_1 = require("../Person");
+const person1 = new Person_1.Person("Mary", 35);
+const person2 = new Person_1.Person("John", 45);
 assert_1.default.equal(typeof person1.tellMyAge, "function");
 assert_1.default.equal(typeof person1.tellMyName, "function");
 assert_1.default.equal(typeof person2.tellMyAge, "function");

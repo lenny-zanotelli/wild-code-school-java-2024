@@ -1,8 +1,8 @@
 import assert from "assert";
-import { BankCustomer } from "../bankCustomer";
+import { BankCustomerCorrecteur } from "../BankCustomerCorrecteur";
 // Tests
 
-const customer = new BankCustomer("John Doe", "3579");
+const customer = new BankCustomerCorrecteur("John Doe", "3579");
 assert.equal(typeof customer.getName, "function");
 assert.equal(typeof customer.verifyPinInput, "function");
 assert.equal(customer.getName(), "John Doe");

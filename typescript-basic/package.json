@@ -12,7 +12,7 @@
     "undici-types": "^6.19.8"
   },
   "scripts": {
-    "build": "rm -rf ./build && tsc",
+    "build": "rimraf ./build && tsc",
     "start:bankCustomer": "node build/bankCustomer.js",
     "start:person": "node build/person.js",
     "test": "node --test"

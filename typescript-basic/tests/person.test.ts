@@ -1,5 +1,5 @@
 import assert from "assert";
-import { Person } from "../person";
+import { Person } from "../Person";
 
 const person1 = new Person("Mary", 35);
 const person2 = new Person("John", 45);
