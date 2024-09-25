@@ -1,0 +1,17 @@
+<p>calculatrice works!</p>
+<div class="generate">
+  <p class="number">{{ numberOne }}</p>
+  <p> {{ currentOperator }}</p>
+  <p class="number">{{ numberTwo }}</p>
+</div>
+<button (click)="generateRandomNumber('one')">Generate Number One</button>
+
+<button (click)="generateRandomNumber('two')">Generate Number Two</button>
+<div class="operators">
+  <button (click)="setOperator('+')">+</button>
+  <button (click)="setOperator('-')">-</button>
+  <button (click)="setOperator('*')">*</button>
+  <button (click)="setOperator('/')">/</button>
+  <button (click)="setReset()">Reset</button>
+</div>
+<p>Résultat : <span class="result-number">{{ calculate() }}</span> </p>

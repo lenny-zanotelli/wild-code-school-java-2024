@@ -1,0 +1,22 @@
+.generate {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.number {
+  border: solid 3px black;
+  padding: 0.25rem;
+}
+
+.operators {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1rem;
+  max-width: 50%;
+  gap: 5px;
+}
+
+.result-number {
+  font-weight: bold;
+}
