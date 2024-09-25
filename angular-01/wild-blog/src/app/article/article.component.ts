@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-article-component',
+  selector: 'app-article',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './article-component.component.html',
-  styleUrl: './article-component.component.scss',
+  templateUrl: './article.component.html',
+  styleUrl: './article.component.scss',
 })
-export class ArticleComponentComponent {
+export class ArticleComponent {
   article: Article = {
     title: "Titre de l'article",
     author: 'John Doe',
