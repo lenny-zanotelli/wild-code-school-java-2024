@@ -5,7 +5,7 @@ import { CalculatriceComponent } from './calculatrice/calculatrice.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CalculatriceComponent],
+  imports: [CalculatriceComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
