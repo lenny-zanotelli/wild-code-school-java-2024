@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-type Operator = '+' | '-' | '*' | '/';
+import { CalculatriceService } from './calculatrice.service';
+import { NumberDisplay, Operator } from './calculatrice.type';
 
 @Component({
   selector: 'app-calculatrice',
@@ -9,49 +10,33 @@ type Operator = '+' | '-' | '*' | '/';
   styleUrl: './calculatrice.component.scss',
 })
 export class CalculatriceComponent {
-  numberOne: number = this.getRandomNumber();
-  numberTwo: number = this.getRandomNumber();
-  currentOperator?: Operator;
+  constructor(private calculatriceService: CalculatriceService) {}
 
-  private getRandomNumber(): number {
-    return Math.floor(Math.random() * 100) + 1;
-  }
-
-  public generateRandomNumber(type: 'one' | 'two'): void {
-    if (type === 'one') {
-      this.numberOne = this.getRandomNumber();
-    } else {
-      this.numberTwo = this.getRandomNumber();
-    }
+  public generateNumber(type: NumberDisplay): void {
+    this.calculatriceService.generateRandomNumber(type);
   }
 
   public setOperator(operator: Operator): void {
-    this.currentOperator = operator;
+    this.calculatriceService.setOperator(operator);
   }
 
   public setReset(): void {
-    this.numberOne = this.getRandomNumber();
-    this.numberTwo = this.getRandomNumber();
-    this.currentOperator = undefined;
+    this.calculatriceService.setReset();
   }
 
-  public calculate(): number | string {
-    if (this.currentOperator === null) {
-      return 'Choisissez un opérateur';
-    }
-    switch (this.currentOperator) {
-      case '+':
-        return this.numberOne + this.numberTwo;
-      case '-':
-        return this.numberOne - this.numberTwo;
-      case '*':
-        return this.numberOne * this.numberTwo;
-      case '/':
-        return this.numberTwo !== 0
-          ? this.numberOne / this.numberTwo
-          : 'Erreur: Division par zéro';
-      default:
-        return 'Opérateur non valide';
-    }
+  public calculate(): string | number {
+    return this.calculatriceService.calculate();
+  }
+
+  get numberOne(): number {
+    return this.calculatriceService.numberOne;
+  }
+
+  get numberTwo(): number {
+    return this.calculatriceService.numberTwo;
+  }
+
+  get currentOperator(): string | undefined {
+    return this.calculatriceService.currentOperator;
   }
 }
