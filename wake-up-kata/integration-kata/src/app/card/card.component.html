@@ -1,0 +1,14 @@
+<main class="layout">
+  <div class="container">
+    @for (card of cards; track $index) {
+    <div class="container__card">
+      <img class="card-image" [src]="card.image" [alt]="card.alt">
+      <div class="container__card__content">
+        <h3>{{ card.title}}</h3>
+        <p>{{ card.description }}</p>
+        <button type="button">En savoir plus</button>
+      </div>
+    </div>
+    }
+  </div>
+</main>
