@@ -3,7 +3,7 @@
   @for (article of articles; track $index) {
   @if (article.isPublished) {
   <article>
-    <div>
+    <div class="card">
       <img [src]="article.image" [alt]="article.title" />
       <h2 [ngStyle]="{'color': getColorByLikes(article.likes)}">{{ article.title}}</h2>
       <h6>Par {{article.author}}</h6>
