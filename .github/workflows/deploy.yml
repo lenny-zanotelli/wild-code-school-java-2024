@@ -36,10 +36,10 @@ jobs:
           node-version: 20
           cache: 'npm'
       - name: Install dependencies
-        working-directory: ./scss-project
+        working-directory: ./css-scss/scss-project
         run: npm ci
       - name: Build
-        working-directory: ./scss-project
+        working-directory: ./css-scss/scss-project
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -47,7 +47,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist folder
-          path: './scss-project/dist'
+          path: './css-scss/scss-project/dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
