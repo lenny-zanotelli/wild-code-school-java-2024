@@ -33,7 +33,7 @@ jobs:
           node-version: 20
           cache: "npm"
       - name: Install dependencies
-        working-directory: ./css-scss/scss-project
+        working-directory: ./scss-project
         run: npm ci
       - name: Build
         working-directory: ./scss-project
