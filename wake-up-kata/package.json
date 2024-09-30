@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf ./build && tsc",
+    "build": "rimraf ./build && tsc && npm run start",
     "start": "node build/index.js"
   },
   "keywords": [],
