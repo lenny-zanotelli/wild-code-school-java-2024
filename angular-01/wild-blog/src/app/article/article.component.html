@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="container" [hidden]="!article.isPublished">
+    <img class="article-img" [src]="article.image" />
+    <div class="content">
+      <h2>{{ article.title }}</h2>
+      <h3>{{ article.author }}</h3>
+      <p>{{ article.content}}</p>
+      <p>{{ article.comment }}</p>
+      <input type="text" [(ngModel)]="article.comment">
+    </div>
+  </div>
+</div>
+<button (click)="togglePublication()">{{ article.isPublished ? 'Dépublier' : 'Publier'}}</button>

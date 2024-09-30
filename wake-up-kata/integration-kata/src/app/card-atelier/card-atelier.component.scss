@@ -1,0 +1,42 @@
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  &__card {
+    max-width: 250px;
+    border: none 2px white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    overflow: hidden;
+    &__content {
+      padding: 0.5rem;
+    }
+  }
+}
+
+.card-image {
+  width: 100%;
+  object-fit: contain;
+  height: auto;
+}
+
+h4 {
+  font-weight: 400;
+}
+
+button {
+  font-weight: bold;
+  padding: 0.6rem 0;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: hsla(275.11, 100%, 49.794%);
+  transition: all ease 0.5s;
+  &:hover {
+    background-color: hsla(273.84, 98.98%, 23.818%);
+  }
+}

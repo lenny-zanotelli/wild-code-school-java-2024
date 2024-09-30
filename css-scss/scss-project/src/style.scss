@@ -1,0 +1,65 @@
+@use "sass:color";
+$primary-color: #dbc534;
+$secondary-color: #e74c3c;
+$background-color-main: #020324;
+$gradient1: #020324;
+$gradient2: #440303;
+$gradient3: #650606;
+
+$rings: 6;
+$ringSizeDefault: 50px;
+
+@mixin ring($size, $color) {
+  width: $size;
+  height: $size;
+  border: ($size * 0.1) solid $primary-color;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: 0 0 10px $primary-color;
+  animation: rotate 3s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@for $i from 1 through $rings {
+  .ring-#{$i} {
+    @include ring($ringSizeDefault, $secondary-color);
+  }
+}
+body {
+  height: 90vh;
+  background: $background-color-main;
+  background: linear-gradient(
+    90deg,
+    $gradient1 0%,
+    $gradient2 50%,
+    $gradient3 100%
+  );
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primary-color;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+
+    .ring {
+      margin: -10px;
+    }
+  }
+}

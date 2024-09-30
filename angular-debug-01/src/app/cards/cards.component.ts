@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Card } from '../../../../src/app/models/card.model';
 
+
 @Component({
   selector: 'app-cards',
   standalone: true,
