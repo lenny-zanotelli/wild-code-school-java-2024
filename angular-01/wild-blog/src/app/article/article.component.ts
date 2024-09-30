@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ArticleService } from './article.service';
-import { Article } from '../models/article';
+import { Article } from '../models/article.model';
 
 @Component({
   selector: 'app-article',

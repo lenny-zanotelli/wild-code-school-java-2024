@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ArticleComponent } from '../article/article.component';
-import { Article } from '../models/article';
+import { Article } from '../models/article.model';
 import { ArticleService } from '../article/article.service';
 
 @Component({

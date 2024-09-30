@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CatalogComponent } from './catalog/catalog.component';
-import { Article } from './models/article';
+import { Article } from './models/article.model';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +12,4 @@ import { Article } from './models/article';
 })
 export class AppComponent {
   title = 'Bienvenue sur le Wild Blog de Lenny !';
-  
 }
