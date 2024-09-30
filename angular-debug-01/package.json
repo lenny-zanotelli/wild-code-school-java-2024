@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "debug01",
   "version": "0.0.0",
   "scripts": {
@@ -35,12 +34,5 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.3.2"
-=======
-  "dependencies": {
-    "rimraf": "^6.0.1"
-  },
-  "devDependencies": {
-    "sass-embedded": "^1.79.3"
->>>>>>> 39a0243a168eaaa66e2d9d18ad615fa17641b825
   }
 }
