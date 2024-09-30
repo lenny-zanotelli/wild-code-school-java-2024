@@ -1,6 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Card } from '../models/card.model';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cards',

@@ -1,13 +1,14 @@
 <section class="cards-container">
   @for (card of cards; track $index) {
   <article class="card" [ngClass]="card.discount ? 'card-discount' : 'card-not-discount'">
-    <p class="discount" *ngIf="card.discount">
+    @if (card.discount) {
+    <p class="discount">
       {{ card.discount }}% de réduction !
     </p>
+    }
     @if(card.isFavorite) {
     <p class="heart">&#10084;</p>
     }
-
     <img [src]="card.picture" [alt]="card.title" />
     <h3>{{ card.title }}</h3>
     <p>
