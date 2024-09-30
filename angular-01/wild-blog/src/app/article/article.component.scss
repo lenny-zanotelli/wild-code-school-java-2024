@@ -1,9 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .card {
+  display: grid;
+  grid-template-columns: 2fr;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 40%;
-  display: grid;
-  grid-template-columns: 2fr;
 }
 
 .card:hover {
@@ -15,9 +23,19 @@
 
 .article-img {
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
-.hidden {
-  display: none;
+button {
+  width: 100%;
+  background-color: #8819f5;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  transition: all ease 0.5s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #7514d7;
+  }
 }

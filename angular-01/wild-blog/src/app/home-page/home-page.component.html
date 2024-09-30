@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    @for (article of articles; track $index) {
+    <li>
+      <a [routerLink]="['/article', article.slug]">
+        <h2>{{ article.title }}</h2>
+      </a>
+    </li>
+    }
+  </ul>
+</nav>

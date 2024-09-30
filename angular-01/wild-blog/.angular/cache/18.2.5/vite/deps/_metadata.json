@@ -1,52 +1,43 @@
 {
-  "hash": "27cba581",
-  "configHash": "4a3da49d",
+  "hash": "8988d741",
+  "configHash": "f72826bb",
   "lockfileHash": "f2f62f88",
-  "browserHash": "4bb04a85",
+  "browserHash": "fd45e6a5",
   "optimized": {
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "7659cc76",
+      "needsInterop": false
+    },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "0341f2d9",
+      "fileHash": "1124dec6",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "9a9afed0",
+      "fileHash": "9216659e",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "95aa6e82",
-      "needsInterop": false
-    },
-    "@angular/common": {
-      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
-      "file": "@angular_common.js",
-      "fileHash": "ddfa5747",
-      "needsInterop": false
-    },
-    "tslib": {
-      "src": "../../../../../node_modules/tslib/tslib.es6.mjs",
-      "file": "tslib.js",
-      "fileHash": "acb5a259",
+      "fileHash": "7f97532d",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-IDABLVAE": {
-      "file": "chunk-IDABLVAE.js"
+    "chunk-XK5SYI5D": {
+      "file": "chunk-XK5SYI5D.js"
     },
-    "chunk-JWR4JQPN": {
-      "file": "chunk-JWR4JQPN.js"
+    "chunk-PPY3APMN": {
+      "file": "chunk-PPY3APMN.js"
     },
-    "chunk-3UPDOXVB": {
-      "file": "chunk-3UPDOXVB.js"
-    },
-    "chunk-XKUCMAFN": {
-      "file": "chunk-XKUCMAFN.js"
+    "chunk-ZDDPHS7B": {
+      "file": "chunk-ZDDPHS7B.js"
     }
   }
 }

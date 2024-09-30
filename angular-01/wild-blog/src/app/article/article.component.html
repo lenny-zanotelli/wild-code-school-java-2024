@@ -1,13 +1,14 @@
-<div class="card">
-  <div class="container" [hidden]="!article.isPublished">
+<section class="container">
+  @if (article) {
+  <article class="card">
     <img class="article-img" [src]="article.image" />
     <div class="content">
       <h2>{{ article.title }}</h2>
       <h3>{{ article.author }}</h3>
       <p>{{ article.content}}</p>
-      <p>{{ article.comment }}</p>
-      <input type="text" [(ngModel)]="article.comment">
+      <button [routerLink]="['/']">
+        Retour à la liste</button>
     </div>
-  </div>
-</div>
-<button (click)="togglePublication()">{{ article.isPublished ? 'Dépublier' : 'Publier'}}</button>
+  </article>
+  }
+</section>
