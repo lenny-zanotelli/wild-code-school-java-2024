@@ -1,21 +1,24 @@
 import { Component } from '@angular/core';
+import { Card } from '../models/card.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './cards.component.html',
-  styleUrl: './cards.component.scss'
+  styleUrl: './cards.component.scss',
 })
 export class CardsComponent {
-  cards: Card = [
+  cards: Card[] = [
     {
       title: 'Produit 1',
       picture: 'https://via.placeholder.com/150',
+      description: 'Ceci est une courte description du produit.',
       published: true,
       discount: 0,
       price: 120,
-      isFavorite: false
+      isFavorite: false,
     },
     {
       title: 'Produit 2',
@@ -24,7 +27,7 @@ export class CardsComponent {
       published: true,
       discount: 50,
       price: 60,
-      isFavorite: false
+      isFavorite: false,
     },
     {
       title: 'Produit 3',
@@ -33,15 +36,16 @@ export class CardsComponent {
       published: false,
       discount: 0,
       price: 230,
-      isFavorite: false
+      isFavorite: false,
     },
     {
       title: 'Produit 4',
+      picture: 'https://via.placeholder.com/150',
       description: 'Ceci est une courte description du produit.',
       published: true,
       discount: 30,
       price: 50,
-      isFavorite: false
+      isFavorite: false,
     },
     {
       title: 'Produit 5',
@@ -50,7 +54,7 @@ export class CardsComponent {
       published: true,
       discount: 15,
       price: 70,
-      isFavorite: false
+      isFavorite: false,
     },
     {
       title: 'Produit 7',
@@ -59,9 +63,9 @@ export class CardsComponent {
       published: false,
       discount: 0,
       price: 599,
-      isFavorite: false
+      isFavorite: false,
     },
-  ]
+  ];
 
   addToFavorite(card: Card) {
     card.isFavorite = true;
