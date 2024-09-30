@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Debug01
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
@@ -25,3 +26,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# wild-code-school-java-2024
+>>>>>>> 39a0243a168eaaa66e2d9d18ad615fa17641b825

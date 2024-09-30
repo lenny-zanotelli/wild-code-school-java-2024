@@ -1,0 +1,52 @@
+{
+  "hash": "27cba581",
+  "configHash": "4a3da49d",
+  "lockfileHash": "f2f62f88",
+  "browserHash": "4bb04a85",
+  "optimized": {
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "0341f2d9",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "9a9afed0",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "95aa6e82",
+      "needsInterop": false
+    },
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "ddfa5747",
+      "needsInterop": false
+    },
+    "tslib": {
+      "src": "../../../../../node_modules/tslib/tslib.es6.mjs",
+      "file": "tslib.js",
+      "fileHash": "acb5a259",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-IDABLVAE": {
+      "file": "chunk-IDABLVAE.js"
+    },
+    "chunk-JWR4JQPN": {
+      "file": "chunk-JWR4JQPN.js"
+    },
+    "chunk-3UPDOXVB": {
+      "file": "chunk-3UPDOXVB.js"
+    },
+    "chunk-XKUCMAFN": {
+      "file": "chunk-XKUCMAFN.js"
+    }
+  }
+}

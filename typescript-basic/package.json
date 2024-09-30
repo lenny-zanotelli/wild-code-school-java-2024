@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "@types/node": "^22.5.5"
+  },
+  "name": "typescript-basic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "undici-types": "^6.19.8"
+  },
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "start:bankCustomer": "node build/bankCustomer.js",
+    "start:person": "node build/person.js",
+    "test": "node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
