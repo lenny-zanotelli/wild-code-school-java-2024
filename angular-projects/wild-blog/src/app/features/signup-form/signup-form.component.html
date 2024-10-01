@@ -1,0 +1,56 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="username">Nom d'utilisateur</label>
+    <input id="username" formControlName="username">
+    @if (signupForm.get('username')?.invalid && signupForm.get('username')?.touched) {
+    <div>
+      @if (signupForm.get('username')?.errors?.['required']) {
+      <span>Le nom d'utilisateur est requis.</span>
+      }
+      @if (signupForm.get('username')?.errors?.['minlength']) {
+      <span>Le nom doit comporter au moins 3 caractères.</span>
+      }
+    </div>
+    }
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input id="email" formControlName="email">
+    @if (signupForm.get('email')?.invalid && signupForm.get('email')?.touched) {
+    <div>
+      @if (signupForm.get('email')?.errors?.['required']) {
+      <span>L'email est requis.</span>
+      }
+      @if (signupForm.get('email')?.errors?.['email']) {
+      <span>l'email doit être valide.</span>
+      }
+    </div>
+    }
+  </div>
+  <div formGroupName="passwords">
+    <div>
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" formControlName="password">
+      @if (signupForm.get('passwords.password')?.invalid && signupForm.get('passwords.password')?.touched) {
+      <div>
+        @if (signupForm.get('passwords.password')?.errors?.['required']) {
+        <span>Le mot de passe est requis.</span>
+        }
+        @if (signupForm.get('passwords.password')?.errors?.['securePassword']) {
+        <span>Le mot de passe doit contenir au moins 12 caractères, avec une majuscule, une minuscule, un chiffre, et un
+          caractère spécial.</span>
+        }
+      </div>
+      }
+    </div>
+    <div>
+      <label for="confirmPassword">Confirmer le mot de passe</label>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword">
+      @if (signupForm.get('passwords')?.errors?.['passwordsMismatch'] && signupForm.get('passwords')?.touched) {
+      <span>Les mots de passe ne correspondent pas.</span>
+      }
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="signupForm.invalid">S'inscrire</button>
+</form>

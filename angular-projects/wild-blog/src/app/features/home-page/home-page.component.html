@@ -1,4 +1,5 @@
 <nav>
+  <h1>Wild Blog</h1>
   <ul>
     @for (article of articles; track $index) {
     <li>
@@ -8,8 +9,13 @@
     </li>
     }
     <li>
-      <a [routerLink]="['/contact']">
+      <a routerLink='/contact'>
         <p>Contact</p>
+      </a>
+    </li>
+    <li>
+      <a routerLink='/signup'>
+        <p>Signup</p>
       </a>
     </li>
   </ul>
