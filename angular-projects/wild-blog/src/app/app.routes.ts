@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { ArticleComponent } from './article/article.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ArticleComponent } from './features/article/article.component';
+import { ContactFormComponent } from './features/contact-form/contact-form.component';
+import { HomePageComponent } from './features/home-page/home-page.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 export const routes: Routes = [
   { path: '', component: HomePageComponent },

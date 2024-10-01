@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ArticleComponent } from '../article/article.component';
-import { Article } from '../models/article.model';
+import { Article } from '../../core/models/article.model';
 import { ArticleService } from '../article/article.service';
 
 @Component({
@@ -12,11 +12,12 @@ import { ArticleService } from '../article/article.service';
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
-export class HomePageComponent {
+export class HomePageComponent implements OnInit {
   articles: Article[] = [];
-  constructor(private router: Router, private articleService: ArticleService) {}
+  router: Router = inject(Router);
+  constructor(private articleService: ArticleService) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.articles = this.articleService.getArticles();
   }
 

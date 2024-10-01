@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Article } from '../models/article.model';
+import { Article } from '../../core/models/article.model';
 
 @Injectable({ providedIn: 'root' })
 export class ArticleService {
@@ -43,6 +43,10 @@ export class ArticleService {
   }
 
   public getArticleBySlug(slug: string): Article | undefined {
-    return this.articles.find((article) => article.slug === slug);
+    const article = this.articles.find((article) => article.slug === slug);
+    if (!article) {
+      throw new Error(`Article with slug "${slug}" not found`);
+    }
+    return article;
   }
 }
