@@ -25,6 +25,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Clear GitHub Pages cache
+        run: rm -rf ./scss-project/dist
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up Node
