@@ -15,7 +15,7 @@ import { ArticleService } from '../article/article.service';
 export class HomePageComponent implements OnInit {
   articles: Article[] = [];
   router: Router = inject(Router);
-  constructor(private articleService: ArticleService) {}
+  articleService: ArticleService = inject(ArticleService);
 
   public ngOnInit(): void {
     this.articles = this.articleService.getArticles();

@@ -2,11 +2,7 @@
   <h1>Wild Blog</h1>
   <ul>
     @for (article of articles; track $index) {
-    <li>
-      <a [routerLink]="['/article', article.slug]">
-        <h2>{{ article.title }}</h2>
-      </a>
-    </li>
+    <app-article [article]="article" />
     }
     <li>
       <a routerLink='/contact'>

@@ -1,0 +1,14 @@
+<section class="container">
+  @if (article) {
+  <article class="card">
+    <img class="article-img" [src]="article.image" [alt]="article.title" />
+    <div class="content">
+      <h2>{{ article.title }}</h2>
+      <h3>{{ article.author }}</h3>
+      <p>{{ article.content}}</p>
+      <button routerLink="/">
+        Retour à la liste</button>
+    </div>
+  </article>
+  }
+</section>
