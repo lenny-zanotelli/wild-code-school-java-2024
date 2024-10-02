@@ -1,0 +1,46 @@
+<form class="login-form" [formGroup]="loginForm" (ngSubmit)="loginForm.valid && onSubmit()" (ngModelChange)="onReset()">
+  <fieldset>
+    <legend class="visually-hidden">Connexion</legend>
+    <div class="avatar">
+      <img src="https://placehold.co/200" alt="placeholder image" />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input (input)="onReset()"
+        [ngClass]="{'is-invalid': loginForm.get('email')?.invalid && loginForm.get('email')?.touched}"
+        class="form-control" type="email" formControlName="email" id="email" placeholder="exemple@mail.com"
+        aria-describedby="emailHelp">
+      @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+      <div class="error-message" aria-live="polite">
+        @if (loginForm.get('email')?.errors?.['required']) {
+        <span>L'email est requis.</span>
+        }
+        @if (loginForm.get('email')?.errors?.['email']) {
+        <span>l'email doit être valide.</span>
+        }
+      </div>
+      }
+    </div>
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input (input)="onReset()"
+        [ngClass]="{'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}"
+        class="form-control" type="password" formControlName="password" placeholder="mot de passe"
+        aria-describedby="passwordHelp">
+      <div class="error-message" aria-live="polite">
+        @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+        <span>Le mot de passe est requis.</span>
+        }
+
+      </div>
+
+    </div>
+    <button class="login-btn" type="submit" [ngClass]="{'disabled': !loginForm.valid}"
+      [disabled]="!loginForm.valid">Connexion</button>
+    @if (message) {
+    <div aria-live="polite">
+      {{ message }}
+    </div>
+    }
+  </fieldset>
+</form>

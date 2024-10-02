@@ -7,6 +7,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { PasswordService } from '../../core/services/password.service';
 
 @Component({
   selector: 'app-signup-form',
@@ -16,6 +17,7 @@ import {
   styleUrl: './signup-form.component.scss',
 })
 export class SignupFormComponent {
+  passwordService = inject(PasswordService);
   formBuilder = inject(FormBuilder);
 
   signupForm = this.formBuilder.group({
@@ -23,10 +25,13 @@ export class SignupFormComponent {
     email: ['', [Validators.required, Validators.email]],
     passwords: this.formBuilder.group(
       {
-        password: ['', [Validators.required, this.securePasswordValidator()]],
+        password: [
+          '',
+          [Validators.required, this.passwordService.securePasswordValidator()],
+        ],
         confirmPassword: [''],
       },
-      { validators: this.passwordMatchValidator() }
+      { validators: this.passwordService.passwordMatchValidator() }
     ),
   });
 
@@ -36,34 +41,5 @@ export class SignupFormComponent {
     } else {
       console.log('Formulaire invalidé');
     }
-  }
-  public passwordMatchValidator(): ValidatorFn {
-    return (formGroup: AbstractControl): ValidationErrors | null => {
-      const password = formGroup.get('password')?.value;
-
-      const confirmPassword = formGroup.get('confirmPassword')?.value;
-
-      return password === confirmPassword ? null : { passwordsMismatch: true };
-    };
-  }
-  public securePasswordValidator(): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const value = control.value ?? '';
-
-      const hasUpperCase = /[A-Z]/.test(value);
-      const hasLowerCase = /[a-z]/.test(value);
-      const hasNumber = /\d/.test(value);
-      const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(value);
-      const isValidLength = value.length >= 12;
-
-      const passwordValid =
-        hasUpperCase &&
-        hasLowerCase &&
-        hasNumber &&
-        hasSpecialChar &&
-        isValidLength;
-
-      return passwordValid ? null : { securePassword: true };
-    };
   }
 }
