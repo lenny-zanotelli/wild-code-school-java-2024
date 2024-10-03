@@ -1,8 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  inject,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { ArticleService } from '../article.service';
 import { ActivatedRoute, ParamMap, RouterModule } from '@angular/router';
-import { Article } from '../../../core/models/article.model';
+import { Article } from '../../../../core/models/article.model';
 
 @Component({
   selector: 'app-article-details',
@@ -13,6 +20,8 @@ import { Article } from '../../../core/models/article.model';
 })
 export class ArticleDetailsComponent implements OnInit {
   @Input() article!: Article;
+  @Output() liked = new EventEmitter<Article>();
+
   private route = inject(ActivatedRoute);
   private articleService = inject(ArticleService);
 
@@ -21,5 +30,10 @@ export class ArticleDetailsComponent implements OnInit {
       const slug = params.get('slug')!;
       this.article = this.articleService.getArticleBySlug(slug)!;
     });
+  }
+
+  public likeArticle(): void {
+    console.log('LIKER', this.article.title);
+    this.liked.emit(this.article);
   }
 }

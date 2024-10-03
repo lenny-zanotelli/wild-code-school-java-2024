@@ -1,8 +1,11 @@
 <nav>
   <h1>Wild Blog</h1>
+  @if (likedMessage) {
+  <p class="liked-message">{{ likedMessage }}</p>
+  }
   <ul>
     @for (article of articles; track $index) {
-    <app-article [article]="article" />
+    <app-article [article]="article" (liked)="onArticleLiked(article.title)" />
     }
     <li>
       <a routerLink='/contact'>
