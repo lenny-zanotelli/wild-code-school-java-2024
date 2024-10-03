@@ -7,7 +7,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { PasswordService } from '../../core/services/password.service';
+import { PasswordService } from '../../../core/services/password.service';
 
 @Component({
   selector: 'app-signup-form',
