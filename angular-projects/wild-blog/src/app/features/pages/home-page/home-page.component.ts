@@ -4,11 +4,12 @@ import { Router, RouterModule } from '@angular/router';
 import { ArticleComponent } from '../article/article.component';
 import { ArticleService } from '../article/article.service';
 import { Article } from '../../../core/models/article.model';
+import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [CommonModule, RouterModule, ArticleComponent],
+  imports: [CommonModule, RouterModule, ArticleComponent, ButtonComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })

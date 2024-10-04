@@ -28,15 +28,8 @@ a {
   }
 }
 
-.like-btn {
-  background-color: #f0f0f0;
-  margin: 0 0.5rem;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #e0e0e0;
+:host ::ng-deep {
+  .like-btn:hover {
+    background-color: #e0e0e0 !important;
   }
 }
