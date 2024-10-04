@@ -3,7 +3,10 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import { Article } from '../../../core/models/article.model';
-import { ButtonComponent } from '../../../shared/components/button/button.component';
+import {
+  ButtonComponent,
+  ButtonStyle,
+} from '../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-article',
@@ -20,18 +23,9 @@ import { ButtonComponent } from '../../../shared/components/button/button.compon
 export class ArticleComponent {
   @Input() article!: Article;
   @Output() liked = new EventEmitter<Article>();
-
-  likeBtnStyles = {
-    'background-color': '#f0f0f0',
-    margin: '0 0.5rem',
-    border: 'none',
-    padding: '5px 10px',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s',
-  };
+  buttonStyle: ButtonStyle = 'secondary';
 
   public likeArticle(): void {
-    console.log('LIKER', this.article);
     this.liked.emit(this.article);
   }
 }

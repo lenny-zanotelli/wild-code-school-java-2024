@@ -14,6 +14,14 @@ import { ButtonComponent } from '../../../shared/components/button/button.compon
   styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent implements OnInit {
+  buttonNames: string[] = [
+    'bouton1',
+    'bouton2',
+    'bouton3',
+    'bouton4',
+    'bouton5',
+  ];
+  clickMessage: string = '';
   articles: Article[] = [];
   likedMessage: string = '';
 
@@ -34,5 +42,9 @@ export class HomePageComponent implements OnInit {
   public onArticleLiked(title: string): void {
     this.likedMessage = `L'article "${title}" vient d'être liké.`;
     console.log('Home page component', this.likedMessage);
+  }
+
+  public onButtonClick(buttonName: string): void {
+    alert(`${buttonName} a été cliqué`);
   }
 }

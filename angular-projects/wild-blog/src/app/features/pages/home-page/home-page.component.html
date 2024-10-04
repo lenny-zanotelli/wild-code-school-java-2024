@@ -25,23 +25,8 @@
   </ul>
 </nav>
 
-<app-button [styles]="{
-   'background-color': 'orange',
-   'color': 'white'
-  }">
-  Orange Button
-</app-button>
-<app-button [styles]="{ 'background-color': 'green', 'color': 'white' }">Green Button</app-button>
-<app-button [styles]="{
-  'background-color': 'transparent',
-  'color': 'blue',
-  'border': '1px solid blue' }">Transparent
-  Button</app-button>
-<app-button [styles]="{
-  'background-color': 'red',
-  'color': 'white',
-  'font-size': '1rem' }">
-  Big Red Button
-</app-button>
-<app-button [styles]="{ 'background-color': 'purple', 'color': 'yellow' }">Purple Button</app-button>
-<app-button [styles]="{}">Default</app-button>
+<div style="display: flex; gap: 1rem">
+  @for (name of buttonNames; track $index) {
+  <app-button [name]="name" [style]="'primary'" size="small" (buttonClick)="onButtonClick($event)" />
+  }
+</div>

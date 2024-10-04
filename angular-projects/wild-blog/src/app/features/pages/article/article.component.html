@@ -1,7 +1,6 @@
 <li>
   <h2>{{ article.title }}</h2>
   <a [routerLink]="['/article', article.slug]">Read more</a>
-  <app-button className="like-btn" [styles]="likeBtnStyles" (buttonClick)="likeArticle()">
-    J'aime
+  <app-button [style]="'secondary'" size="small" name="J'aime" (buttonClick)="likeArticle()">
   </app-button>
 </li>
