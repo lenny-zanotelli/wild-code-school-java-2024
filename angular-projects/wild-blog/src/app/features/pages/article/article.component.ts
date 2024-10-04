@@ -13,10 +13,10 @@ import { Article } from '../../../core/models/article.model';
 })
 export class ArticleComponent {
   @Input() article!: Article;
-  @Output() liked = new EventEmitter<string>();
+  @Output() liked = new EventEmitter<Article>();
 
-  public onArticleLiked(title: string): void {
-    this.liked.emit(title);
-    console.log('Article component', title);
+  public likeArticle(): void {
+    console.log('LIKER', this.article);
+    this.liked.emit(this.article);
   }
 }

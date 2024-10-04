@@ -20,7 +20,6 @@ import { Article } from '../../../../core/models/article.model';
 })
 export class ArticleDetailsComponent implements OnInit {
   @Input() article!: Article;
-  @Output() liked = new EventEmitter<Article>();
 
   private route = inject(ActivatedRoute);
   private articleService = inject(ArticleService);
@@ -30,10 +29,5 @@ export class ArticleDetailsComponent implements OnInit {
       const slug = params.get('slug')!;
       this.article = this.articleService.getArticleBySlug(slug)!;
     });
-  }
-
-  public likeArticle(): void {
-    console.log('LIKER', this.article.title);
-    this.liked.emit(this.article);
   }
 }
