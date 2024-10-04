@@ -1,3 +1,3 @@
-<button type="button" [ngStyle]="styles" [ngClass]="className" (click)="onClick()">
-  <ng-content></ng-content>
+<button type="button" class="button" [ngClass]="[style, size, className]" (click)="onClick()">
+  {{ name }}
 </button>

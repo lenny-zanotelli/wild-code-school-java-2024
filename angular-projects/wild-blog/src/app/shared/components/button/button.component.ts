@@ -1,9 +1,8 @@
-import { CommonModule, NgStyle } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-interface ButtonStyle {
-  [key: string]: string;
-}
+export type ButtonStyle = 'primary' | 'secondary' | 'danger';
+type ButtonSizeStyle = 'small' | 'large';
 
 @Component({
   selector: 'app-button',
@@ -13,11 +12,13 @@ interface ButtonStyle {
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
-  @Input() styles: ButtonStyle = {};
+  @Input() style!: ButtonStyle;
+  @Input() size!: ButtonSizeStyle;
+  @Input() name: string = '';
   @Input() className: string = '';
-  @Output() buttonClick = new EventEmitter<void>();
+  @Output() buttonClick = new EventEmitter<string>();
 
   public onClick(): void {
-    this.buttonClick.emit();
+    this.buttonClick.emit(this.name);
   }
 }

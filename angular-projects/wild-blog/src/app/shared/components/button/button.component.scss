@@ -1,6 +1,27 @@
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+@import "../../../../variables";
+
+:host {
+  .button {
+    @include button-base;
+
+    &.primary {
+      @include button-primary;
+    }
+
+    &.secondary {
+      @include button-secondary;
+    }
+
+    &.danger {
+      @include button-danger;
+    }
+
+    &.large {
+      font-size: 1.2em;
+    }
+
+    &.small {
+      font-size: 0.8em;
+    }
+  }
 }
